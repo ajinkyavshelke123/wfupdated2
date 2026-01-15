@@ -17,6 +17,17 @@ import {
   XCircle,
   Edit3,
 } from "lucide-react";
+type StudentFormValues = {
+  fullName: string;
+  email: string;
+  phone: string;
+  course: string;
+};
+
+type StudentDetailsFormProps = {
+  defaultValues: StudentFormValues;
+};
+
 
 // --- Mock Data ---
 
@@ -35,7 +46,9 @@ const DUBLIN_SCHOOLS = [
 
 // --- Form Components (Adapted from Admin Module) ---
 
-const StudentDetailsForm = ({ defaultValues }) => (
+const StudentDetailsForm = ({
+  defaultValues,
+}: StudentDetailsFormProps) => (
   <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
     <div className="bg-white border border-gray-200 rounded-xl p-6">
       <h3 className="text-lg font-bold text-black mb-4">
